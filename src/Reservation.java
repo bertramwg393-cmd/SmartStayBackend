@@ -1,16 +1,16 @@
 public class Reservation {
     private String reservationId;
-    private String roomNumber;
+    private Room room;
     private String guestName;
 
-    public Reservation(String reservationId, String roomNumber, String guestName) {
+    public Reservation(String reservationId, Room room, String guestName) {
         this.reservationId = reservationId;
-        this.roomNumber = roomNumber;
+        this.room = room;
         this.guestName = guestName;
     }
 
     @Override
     public String toString() {
-        return "訂單編號: " + reservationId + ", 房號:ㄕ " + roomNumber + ", 房客:" + guestName;
+        return "訂單ID: " + reservationId + ", 房號: " + room.getRoomNumber() + ", 房客:" + guestName;
     }
 }

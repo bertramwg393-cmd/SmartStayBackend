@@ -1,29 +1,32 @@
+package com.example.smartstay.model;
+
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "rooms")
 public class Room {
-    private  int roomNumber;
-    private  double price;
-    private  boolean isBooked;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Room(int roomNumber, double price) {
-        this.roomNumber = roomNumber;
-        this.price = price;
-        this.isBooked = false;
-    }
+    private String roomNumber;
+    private String roomType;
+    private double price;
 
-    public int getRoomNumber() {
-        return roomNumber;
-    }
-    public double getPrice(){
-        return price;
+    // 空建構子
+    public Room() {
     }
 
-    public void bookRoom() {
-        if (!isBooked) {
-            isBooked = true;
-            System.out.println("房號" + roomNumber + "訂房成功!");
-        } else {
-            System.out.println("房號" + roomNumber + "已經被訂走了");
-        }
-    }
+    // 基本的 Getter 與 Setter
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getRoomNumber() { return roomNumber; }
+    public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }
+
+    public String getRoomType() { return roomType; }
+    public void setRoomType(String roomType) { this.roomType = roomType; }
+
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 }

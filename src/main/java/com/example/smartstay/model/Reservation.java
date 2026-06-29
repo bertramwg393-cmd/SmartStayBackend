@@ -8,6 +8,9 @@ public class Reservation {
         this.room = room;
         this.guestName = guestName;
     }
+    public Room getRoom(){
+        return room;
+    };
 
     @Override
     public String toString() {

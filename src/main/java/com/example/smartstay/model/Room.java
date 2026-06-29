@@ -1,3 +1,5 @@
+import jakarta.persistence.*;
+
 public class Room {
     private  int roomNumber;
     private  double price;
@@ -11,6 +13,9 @@ public class Room {
 
     public int getRoomNumber() {
         return roomNumber;
+    }
+    public double getPrice(){
+        return price;
     }
 
     public void bookRoom() {

@@ -13,7 +13,8 @@ public class Main {
 
         System.out.println("===== 今日旅宿系統預約清單 =====");
         for (Reservation res : hotelList) {
-            System.out.println(res.toString());
+            double price = res.getRoom().getPrice();
+            System.out.println(res.toString() + " | 價格: $" + price);
         }
     }
 }

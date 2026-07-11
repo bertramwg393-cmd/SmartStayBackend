@@ -1,6 +1,7 @@
 package com.example.smartstay.model;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "rooms")
@@ -11,7 +12,7 @@ public class Room {
 
     private String roomNumber;
     private String roomType;
-    private double price;
+    private BigDecimal price;  // <--- 把 double 改成 BigDecimal
 
     // 空建構子
     public Room() {
@@ -27,6 +28,6 @@ public class Room {
     public String getRoomType() { return roomType; }
     public void setRoomType(String roomType) { this.roomType = roomType; }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 }

@@ -4,6 +4,7 @@ import com.example.smartstay.model.Room;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class TestController {
         Room room1 = new Room();
         room1.setRoomNumber("101");
         room1.setRoomType("雙人房");
-        room1.setPrice(2000.0);
+        room1.setPrice(new BigDecimal("2000.0"));
 
         roomList.add(room1);
 

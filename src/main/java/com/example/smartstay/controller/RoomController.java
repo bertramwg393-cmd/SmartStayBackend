@@ -31,6 +31,11 @@ public class RoomController {
     // 路徑會變成: http://localhost:8080/api/rooms/init
     @GetMapping("/init")
     public String initData() {
+    	
+    	if(roomRepository.count() > 0) {
+    		return "資料庫已經有資料，跳過初始化。";
+    	}
+    	
         Room r1 = new Room();
         r1.setRoomNumber("101");
         r1.setRoomType("雙人房");
@@ -69,8 +74,8 @@ public class RoomController {
         // 叫倉庫管理員把這間房刪掉（注意：實務上通常會根據 ID 刪除，這裡先體驗 delete 方法）
         // roomRepository.delete(targetRoom);
 
-        roomRepository.delete(targetRoom);
-        return "房間資料已成功從資料庫刪除！";
+        roomRepository.deleteById(1);
+        return "房間資料101已成功從資料庫刪除！";
     }
 
 }

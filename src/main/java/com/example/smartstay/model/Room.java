@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String roomNumber;
     private String roomType;
@@ -19,8 +19,8 @@ public class Room {
     }
 
     // 基本的 Getter 與 Setter
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getRoomNumber() { return roomNumber; }
     public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }

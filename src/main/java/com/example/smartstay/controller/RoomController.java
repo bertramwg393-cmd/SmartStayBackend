@@ -2,16 +2,14 @@ package com.example.smartstay.controller;
 
 import com.example.smartstay.model.Room;
 import com.example.smartstay.repository.RoomRepository;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/rooms") // <--- 這裡是所有路徑的「總開頭」
+@CrossOrigin(origins = "http://localhost:5173")
 public class RoomController {
 
     // 1. 改成 final 限制，代表這台機器一旦裝上去就不能被換掉（更安全）
